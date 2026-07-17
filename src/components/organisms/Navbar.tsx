@@ -70,7 +70,7 @@ export default function Navbar() {
                     ))}
                 </div>
 
-                <div className="pb-2 lg:pb-0">
+                <div className="pb-2 lg:pb-0 ">
                     <NavLink to={'/login'} onClick={() => setIsMenuOpen(false)}>
                         <Typography
                             text={'Войти'}

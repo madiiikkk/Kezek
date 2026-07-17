@@ -15,7 +15,7 @@ export default function CategoryGrid() {
                     />
                     <Typography
                         text={'Выберите услугу из каталога'}
-                        className="text-sm md:text-base text-[#6E7191]"
+                        className="text-sm md:text-lg text-[#6E7191]"
                     />
                 </div>
 

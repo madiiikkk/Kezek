@@ -1,4 +1,13 @@
-import { Car, BriefcaseMedical, UserRound, ArrowRight } from 'lucide-react';
+import {
+    Car,
+    BriefcaseMedical,
+    UserRound,
+    Wrench,
+    GraduationCap,
+    Scale,
+    Dumbbell,
+    LayoutGrid
+} from 'lucide-react';
 import Typography from '../../atoms/Typography';
 import Icon from '../../atoms/Icon';
 import Button from '../../atoms/Button';
@@ -7,70 +16,85 @@ const categories = [
     {
         id: 1,
         icon: UserRound,
-        title: 'Красота и уход',
-        description:
-            'Запишитесь к лучшим стилистам и мастерам маникюра в вашем городе.',
-        buttonText: 'Выбрать услугу'
+        title: 'Красота',
+        subtitle: '0 услуг'
     },
     {
         id: 2,
         icon: BriefcaseMedical,
         title: 'Медицина',
-        description: 'Консультации врачей, анализы и диагностика без очередей.',
-        buttonText: 'Записаться'
+        subtitle: '0 специалистов'
     },
     {
         id: 3,
         icon: Car,
-        title: 'Автосервис',
-        description:
-            'Техническое обслуживание, мойка и ремонт вашего автомобиля.',
-        buttonText: 'Найти сервис'
+        title: 'Авто',
+        subtitle: '0 сервисов'
+    },
+    {
+        id: 4,
+        icon: Wrench,
+        title: 'Ремонт',
+        subtitle: '0 мастеров'
+    },
+    {
+        id: 5,
+        icon: GraduationCap,
+        title: 'Образование',
+        subtitle: '0 курсов'
+    },
+    {
+        id: 6,
+        icon: Scale,
+        title: 'Юристы',
+        subtitle: '0 контор'
+    },
+    {
+        id: 7,
+        icon: Dumbbell,
+        title: 'Спорт',
+        subtitle: '0 залов'
     }
 ];
 
 export default function CategoryCard() {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full p-4 bg-[#FAFAFC]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full p-4 bg-white">
             {categories.map((item) => (
                 <div
                     key={item.id}
-                    className="w-full h-150 bg-white rounded-3xl p-7 flex flex-col shadow-sm hover:shadow-lg  transition-shadow"
+                    className="relative w-full h-[] h-35 md:h-62.5 bg-[#F4F6FC] rounded-2xl p-5 flex flex-col justify-between overflow-hidden cursor-pointer hover:shadow-md transition-all border border-transparent hover:border-[#E1E4F5] group"
                 >
-                    <div>
+                    <div className="absolute -top-8 -right-8 w-28 h-28 bg-[#E6E9FA] rounded-full opacity-60 group-hover:bg-[#c1c6e3] duration-300"></div>
+
+                    <div className="w-20 h-20 bg-white rounded-xl flex items-center justify-center relative z-10 shadow-sm">
+                        <Icon
+                            icon={item.icon}
+                            size={35}
+                            className="text-[#3624C7]"
+                        />
+                    </div>
+
+                    <div className="relative z-10">
                         <Typography
                             text={item.title}
-                            className="block text-[#1A1A24] font-bold text-xl mb-2"
+                            className="block text-[#111115] font-bold text-xl mb-0.5"
                         />
                         <Typography
-                            text={item.description}
-                            className="block text-[#6E7191] text-sm leading-relaxed"
+                            text={item.subtitle}
+                            className="block text-[#868695] text-lg font-medium uppercase tracking-wide"
                         />
                     </div>
-
-                    <div className="flex-1 flex justify-center items-center">
-                        <div className="flex justify-center items-center w-[120px] h-[120px] rounded-full bg-[#DEDCFF]">
-                            <Icon
-                                icon={item.icon}
-                                size={48}
-                                className="text-[#5B44FF]"
-                            />
-                        </div>
-                    </div>
-
-                    <Button className="flex items-center gap-2 bg-[#F3F3F7] hover:bg-[#E5E5EB] transition-colors w-fit px-4 py-2.5 rounded-xl mt-auto cursor-pointer">
-                        <Typography
-                            text={item.buttonText}
-                            className="text-[#1A1A24] font-semibold text-sm"
-                        />
-                        <Icon
-                            icon={ArrowRight}
-                            size={16}
-                            className="text-[#1A1A24]"
-                        />
-                    </Button>
                 </div>
             ))}
+
+            <Button className="relative w-full h-35 md:h-62.5 bg-[#3624C7] rounded-2xl p-5 flex flex-col items-center justify-center cursor-pointer hover:bg-[#2F1FB3] hover:shadow-lg transition-all">
+                <Icon icon={LayoutGrid} size={35} className="text-white mb-3" />
+                <Typography
+                    text="Все категории"
+                    className="block text-white font-bold text-xl"
+                />
+            </Button>
         </div>
     );
 }

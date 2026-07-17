@@ -7,11 +7,11 @@ import LocationSelect from '../../molecules/Home/LocationSelect';
 
 export default function GlobalSearchBar() {
     return (
-        <div className="w-full max-w-5xl flex flex-col md:flex-row gap-3 md:gap-5 items-center p-3 border border-[#c7c4d8] rounded-2xl shadow-xl bg-white">
+        <div className="w-full max-w-5xl flex flex-col md:flex-row gap-3 md:gap-5 items-center p-3 border border-[#c7c4d8] rounded-2xl shadow-xl bg-transparent">
             <div className="flex-1 w-full">
                 <Searchbar
                     placeholder="Услуга, специалист или салон"
-                    className="flex p-3 w-full gap-3 rounded-xl bg-[#F3F3F7] md:bg-transparent"
+                    className="flex p-3 w-full gap-3 rounded-xl bg-[#fff] md:bg-[#fff]"
                 />
             </div>
 
