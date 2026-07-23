@@ -26,10 +26,10 @@ export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <div className="flex flex-wrap justify-between items-center w-full px-4 md:px-9 py-2 gap-y-4">
+        <div className="flex flex-wrap justify-between items-center w-full px-19 md:px-24 py-2 gap-y-4">
             <div className="flex flex-wrap lg:flex-nowrap items-center gap-4 lg:gap-15 w-full lg:w-auto justify-between lg:justify-start">
                 <NavLink
-                    to={'/home'}
+                    to={'/'}
                     className="cursor-pointer pb-1 shrink-0"
                     onClick={() => console.log('logo')}
                 >

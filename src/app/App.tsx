@@ -14,12 +14,13 @@ import Staff from '../pages/CRM/Staff';
 import Settings from '../pages/CRM/Settings';
 import Reviews from '../pages/CRM/Reviews';
 import Home from '../pages/Home';
+import Authorization from '../pages/Authorization';
 
 function App() {
     return (
         <Routes>
             <Route path="/" element={<MainAppLayout />}>
-                <Route path="home" element={<Home />} />
+                <Route index element={<Home />} />
                 <Route path="catalog" element={<Catalog />} />
                 <Route path="favorites" element={<Favorites />} />
                 <Route path="my-bookings" element={<Mybookings />} />
@@ -35,8 +36,10 @@ function App() {
                 <Route path="reviews" element={<Reviews />} />
             </Route>
 
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Registration />} />
+            <Route path="/auth" element={<Authorization />}>
+                <Route path="login" element={<Login />} />
+                <Route path="register" element={<Registration />} />
+            </Route>
         </Routes>
     );
 }

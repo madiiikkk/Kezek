@@ -59,11 +59,11 @@ const categories = [
 
 export default function CategoryCard() {
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full p-4 bg-white">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full p-4 bg-white rounded-3xl border border-[#E1E4F5] c7c4d8">
             {categories.map((item) => (
-                <div
+                <Button
                     key={item.id}
-                    className="relative w-full h-[] h-35 md:h-62.5 bg-[#F4F6FC] rounded-2xl p-5 flex flex-col justify-between overflow-hidden cursor-pointer hover:shadow-md transition-all border border-transparent hover:border-[#E1E4F5] group"
+                    className="relative w-full h-[] h-35 md:h-62.5 bg-[#F4F6FC] rounded-2xl p-5 flex flex-col justify-between overflow-hidden cursor-pointer hover:shadow-md transition-all border border-transparent hover:border-[#c7c4d8] E1E4F5 group select-none text-left"
                 >
                     <div className="absolute -top-8 -right-8 w-28 h-28 bg-[#E6E9FA] rounded-full opacity-60 group-hover:bg-[#c1c6e3] duration-300"></div>
 
@@ -85,7 +85,7 @@ export default function CategoryCard() {
                             className="block text-[#868695] text-lg font-medium uppercase tracking-wide"
                         />
                     </div>
-                </div>
+                </Button>
             ))}
 
             <Button className="relative w-full h-35 md:h-62.5 bg-[#3624C7] rounded-2xl p-5 flex flex-col items-center justify-center cursor-pointer hover:bg-[#2F1FB3] hover:shadow-lg transition-all">
