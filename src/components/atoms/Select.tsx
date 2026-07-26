@@ -5,6 +5,7 @@ import Icon from './Icon';
 export interface SelectOption {
     id: string | number;
     label: string;
+    icon?: LucideIcon;
 }
 
 interface SelectProps {

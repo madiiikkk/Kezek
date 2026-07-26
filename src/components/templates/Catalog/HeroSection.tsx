@@ -7,7 +7,7 @@ import CatalogTemplate from './CatalogTemplate';
 
 export default function HeroSection() {
     return (
-        <div className="h-[90.5vh]">
+        <div className="h-screen">
             <CatalogTemplate
                 header={<CatalogHeader />}
                 filter={<Sidebar />}

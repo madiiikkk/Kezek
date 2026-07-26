@@ -1,10 +1,20 @@
-import React from 'react';
+import type { ButtonHTMLAttributes, ReactNode } from 'react';
 
-type ButtonProps = {
-    children: React.ReactNode;
-    className?: string;
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+    children: ReactNode;
 };
 
-export default function Button({ children, className }: ButtonProps) {
-    return <button className={className || ''}>{children}</button>;
+export default function Button({
+    children,
+    className = '',
+    ...props
+}: ButtonProps) {
+    return (
+        <button
+            {...props}
+            className={`transition-colors duration-200 ${className}`.trim()}
+        >
+            {children}
+        </button>
+    );
 }
