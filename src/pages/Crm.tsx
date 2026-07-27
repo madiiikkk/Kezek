@@ -1,14 +1,9 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
+import HeroSection from '../components/templates/Crm/HeroSection';
 
 export default function Crm() {
     return (
-        <div className="crm-layout">
-            <h1>CRM Система</h1>
-
-            <main>
-                <Outlet />
-            </main>
+        <div className="">
+            <HeroSection />
         </div>
     );
 }

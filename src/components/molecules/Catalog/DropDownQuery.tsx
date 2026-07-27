@@ -17,19 +17,19 @@ export default function DropDownQuery({ title, children }: DropDownQueryProps) {
 
     return (
         <div>
-            <div className="w-40 md:w-full rounded-3xl py-4 flex flex-col gap-5 bg-white">
+            <div className="w-40 md:w-full rounded-3xl py-2 flex flex-col gap-5 bg-white">
                 <div className="flex justify-between items-center">
                     <Typography text={title} className="text-lg" />
                     <Button onClick={toggleOpen}>
                         <Icon
                             icon={ChevronDown}
                             className={`text-[#8c8c8c] transition-transform duration-200 cursor-pointer ${
-                                isOpen ? 'rotate-180' : ''
+                                !isOpen ? 'rotate-180' : ''
                             }`}
                         />
                     </Button>
                 </div>
-                {isOpen && <div>{children}</div>}
+                {!isOpen && <div>{children}</div>}
             </div>
         </div>
     );

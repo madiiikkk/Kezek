@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import Typography from '../atoms/Typography';
-import Searchbar from '../molecules/Home/Searchbar';
+import Typography from '../../atoms/Typography';
+import Searchbar from '../../molecules/Home/Searchbar';
 
 const navigation = [
     {

@@ -16,9 +16,9 @@ export default function CatalogTemplate({
     return (
         <div className="flex flex-col py-5 px-19 md:px-24 gap-5">
             <div className="">{header}</div>
-            <div className="flex gap-10">
+            <div className="flex gap-5">
                 <div className="basis-[20%]">{filter}</div>
-                <div className="basis-[80%]">
+                <div className="flex flex-col gap-5 basis-[80%] ">
                     <div>{search}</div>
                     <div>{catalog}</div>
                     <div>{pagination}</div>

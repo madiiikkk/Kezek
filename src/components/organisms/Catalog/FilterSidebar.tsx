@@ -80,7 +80,7 @@ export default function Sidebar() {
     return (
         <div className="flex flex-col gap-5">
             <div>
-                <div className="w-40 md:w-full border border-[#e3e3e3] rounded-3xl px-6 py-2 flex flex-col gap-3 bg-white">
+                <div className="w-40 md:w-full border border-[#c7c4d8] rounded-3xl px-6 py-2 flex flex-col gap-3 bg-white">
                     <DropDownQuery title="Фильтр">
                         <div className="flex flex-col gap-3">
                             <Typography
@@ -92,7 +92,7 @@ export default function Sidebar() {
                                 value={selectedSortby}
                                 onChange={handleSortChange}
                                 leftIcon={Funnel}
-                                className="w-full border border-[#e3e3e3] rounded-xl"
+                                className="w-full border border-[#e3e3e3] rounded-xl text-[#e3e3e3] font-normal"
                             />
 
                             <Typography text="Цена" className="text-sm pt-3" />
@@ -123,7 +123,7 @@ export default function Sidebar() {
             </div>
 
             <div>
-                <div className="w-40 md:w-full border border-[#e3e3e3] rounded-3xl px-6 py-4 flex flex-col bg-white">
+                <div className="w-40 md:w-full border border-[#c7c4d8] rounded-3xl px-6 py-2 flex flex-col bg-white">
                     <DropDownQuery title="Категория">
                         {categorys.map((i) => (
                             <Button
@@ -139,7 +139,7 @@ export default function Sidebar() {
             </div>
 
             <div>
-                <div className="w-40 md:w-full border border-[#e3e3e3] rounded-3xl px-6 py-4 flex flex-col bg-white">
+                <div className="w-40 md:w-full border border-[#c7c4d8] rounded-3xl px-6 py-2 flex flex-col bg-white">
                     <DropDownQuery title="Услуги">
                         <div className="flex flex-col gap-3 mt-4">
                             {services.map((i) => (
