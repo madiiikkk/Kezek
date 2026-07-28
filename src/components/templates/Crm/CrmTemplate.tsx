@@ -1,4 +1,4 @@
-import { Outlet, useLocation } from 'react-router-dom'; // Добавили useLocation
+import { Outlet, useLocation } from 'react-router-dom';
 import Sidebar from '../../organisms/Crm/Sidebar';
 import Header from '../../organisms/Crm/Header';
 import {
@@ -41,16 +41,16 @@ export default function Crm() {
     const headerLabel = activeItem ? activeItem.label : 'Дашборд';
 
     return (
-        <main className="min-h-screen bg-[#f8f9ff] flex overflow-hidden">
-            <aside className="flex-none ">
+        <main className="h-screen bg-[#f8f9ff] flex overflow-hidden">
+            <aside className="flex-none border-r border-[#c7c4d8] h-full">
                 <Sidebar navigationItems={navigationData} />
             </aside>
 
-            <div className="flex-1 flex flex-col min-w-0">
-                <header>
+            <div className="flex-1 flex flex-col min-w-0 h-full overflow-y-auto">
+                <header className="shrink-0">
                     <Header label={headerLabel} />
                 </header>
-                <section className="py-5 px-10">
+                <section className="py-9 px-10 flex-1">
                     <Outlet />
                 </section>
             </div>
