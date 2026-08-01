@@ -71,7 +71,10 @@ export default function Navbar() {
                 </div>
 
                 <div className="pb-2 lg:pb-0 ">
-                    <NavLink to={'/login'} onClick={() => setIsMenuOpen(false)}>
+                    <NavLink
+                        to={'/auth/login'}
+                        onClick={() => setIsMenuOpen(false)}
+                    >
                         <Typography
                             text={'Войти'}
                             className="text-[#4F46E5] text-base md:text-lg font-medium tracking-tight select-none hover:border-b-2 border-[#4F46E5]"
