@@ -10,6 +10,9 @@ import {
     Settings,
     MessageSquareText
 } from 'lucide-react';
+import BusinessHeader from '../../organisms/Crm/Businesses/BusinessHeader';
+import ServicesHeader from '../../organisms/Crm/Services/ServicesHeader';
+import { BusinessProvider } from '../../../context/BusinessContext';
 
 const navigationData = [
     { id: 1, navigator: 'dashboard', label: 'Дашборд', icon: LayoutDashboard },
@@ -17,16 +20,24 @@ const navigationData = [
         id: 2,
         navigator: 'my-businesses',
         label: 'Мои бизнесы',
-        icon: Building2
+        icon: Building2,
+        rightElement: <BusinessHeader />
+    },
+
+    { id: 3, navigator: 'staff', label: 'Персонал', icon: Users },
+    {
+        id: 4,
+        navigator: 'services',
+        label: 'Услуги',
+        icon: Layers,
+        rightElement: <ServicesHeader />
     },
     {
-        id: 3,
+        id: 5,
         navigator: 'appointments',
         label: 'Назначения',
         icon: CalendarDays
     },
-    { id: 4, navigator: 'services', label: 'Услуги', icon: Layers },
-    { id: 5, navigator: 'staff', label: 'Персонал', icon: Users },
     { id: 6, navigator: 'settings', label: 'Настройки', icon: Settings },
     { id: 7, navigator: 'reviews', label: 'Отзывы', icon: MessageSquareText }
 ];
@@ -39,21 +50,27 @@ export default function Crm() {
     );
 
     const headerLabel = activeItem ? activeItem.label : 'Дашборд';
+    const headerRightElement = activeItem?.rightElement;
 
     return (
-        <main className="h-screen bg-[#f8f9ff] flex overflow-hidden">
-            <aside className="flex-none border-r border-[#c7c4d8] h-full">
-                <Sidebar navigationItems={navigationData} />
-            </aside>
+        <BusinessProvider>
+            <main className="h-screen bg-[#f8f9ff] flex overflow-hidden">
+                <aside className="flex-none border-r border-[#c7c4d8] h-full">
+                    <Sidebar navigationItems={navigationData} />
+                </aside>
 
-            <div className="flex-1 flex flex-col min-w-0 h-full overflow-y-auto">
-                <header className="shrink-0">
-                    <Header label={headerLabel} />
-                </header>
-                <section className="py-9 px-10 flex-1">
-                    <Outlet />
-                </section>
-            </div>
-        </main>
+                <div className="flex-1 flex flex-col min-w-0 h-full overflow-y-auto">
+                    <header className="shrink-0">
+                        <Header
+                            label={headerLabel}
+                            rightElement={headerRightElement}
+                        />
+                    </header>
+                    <section className="py-9 px-10 flex-1">
+                        <Outlet />
+                    </section>
+                </div>
+            </main>
+        </BusinessProvider>
     );
 }

@@ -4,6 +4,7 @@ import Logo from '../../molecules/Crm/Logo';
 import Typography from '../../atoms/Typography';
 import Icon from '../../atoms/Icon';
 import { Menu, LogOut, type LucideIcon } from 'lucide-react';
+import Logout from './Logout';
 
 export interface NavType {
     id: number;
@@ -77,13 +78,7 @@ export default function Sidebar({ navigationItems }: SideBarProps) {
                 </div>
 
                 <div className="w-full mt-auto pt-6 shrink-0">
-                    <button className="flex items-center px-4 py-3 w-full rounded-xl gap-3 transition-colors bg-transparent text-red-500 hover:bg-red-50 cursor-pointer">
-                        <Icon icon={LogOut} size={24} />
-                        <Typography
-                            className="text-lg font-medium"
-                            text="Выйти"
-                        />
-                    </button>
+                    <Logout />
                 </div>
             </div>
         </>

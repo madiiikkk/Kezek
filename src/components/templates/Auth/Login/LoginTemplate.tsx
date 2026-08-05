@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { User } from 'lucide-react';
 import { useMutation } from '@tanstack/react-query';
 
@@ -14,7 +14,11 @@ export default function LoginTemplate() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const { setUser } = useUser();
+    const { setUser, user } = useUser();
+
+    useEffect(() => {
+        console.log(user);
+    }, [user]);
 
     const navigate = useNavigate();
 
@@ -25,7 +29,7 @@ export default function LoginTemplate() {
 
             setUser(data.data);
 
-            navigate('/');
+            navigate('/crm/dashboard');
         },
         onError: (error) => {
             console.error('Ошибка', error);

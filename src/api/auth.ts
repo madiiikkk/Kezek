@@ -64,3 +64,16 @@ export const loginUser = async (email: string, password: string) => {
         throw error;
     }
 }
+
+export const logout = async () => {
+    try {
+        const response = await api.post('/api/users/logout/', null, {
+            withCredentials: true
+        });
+
+        return response.data;
+    } catch(error) {
+        console.error("Ошибка выхода: ", error);
+        throw error;
+    }
+}
