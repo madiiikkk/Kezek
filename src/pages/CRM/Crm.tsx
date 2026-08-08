@@ -1,9 +1,9 @@
 import HeroSection from '../../components/templates/Crm/HeroSection';
 
-export default function Crm() {
+export default function CrmPage() {
     return (
-        <div className="">
+        <>
             <HeroSection />
-        </div>
+        </>
     );
 }

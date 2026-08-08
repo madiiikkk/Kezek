@@ -51,7 +51,7 @@ export default function Select({
     };
 
     return (
-        <div className={`relative ${className}`} ref={dropdownRef}>
+        <div className={`relative ${className} `} ref={dropdownRef}>
             <div
                 className="flex items-center justify-between p-3 rounded-xl cursor-pointer select-none hover:bg-slate-50 transition-colors"
                 onClick={() => setIsOpen((prev) => !prev)}

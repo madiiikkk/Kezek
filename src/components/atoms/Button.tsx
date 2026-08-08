@@ -7,11 +7,13 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 export default function Button({
     children,
     className = '',
+    type = 'button',
     ...props
 }: ButtonProps) {
     return (
         <button
             {...props}
+            type={type}
             className={`transition-colors duration-200 ${className}`.trim()}
         >
             {children}

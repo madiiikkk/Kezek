@@ -17,9 +17,12 @@ import Staff from '../pages/CRM/Staff';
 import Settings from '../pages/CRM/Settings';
 import Reviews from '../pages/CRM/Reviews';
 import Home from '../pages/Home';
+import AddStaf from '../pages/CRM/AddStaf';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { UserProvider } from '../context/UserContext';
+import CrmPage from '../pages/CRM/Crm';
+import EditStaff from '../pages/CRM/EditStaff';
 
 const queryClient = new QueryClient();
 
@@ -35,7 +38,7 @@ function App() {
                         <Route path="my-bookings" element={<Mybookings />} />
                     </Route>
 
-                    <Route path="/crm" element={<Crm />}>
+                    <Route path="/crm" element={<CrmPage />}>
                         <Route path="dashboard" element={<Dashboard />} />
                         <Route
                             path="my-businesses"
@@ -43,7 +46,11 @@ function App() {
                         />
                         <Route path="appointments" element={<Appointments />} />
                         <Route path="services" element={<Services />} />
-                        <Route path="staff" element={<Staff />} />
+                        <Route path="staff">
+                            <Route index element={<Staff />} />
+                            <Route path="add" element={<AddStaf />} />
+                            <Route path="edit/:id" element={<EditStaff />} />
+                        </Route>
                         <Route path="settings" element={<Settings />} />
                         <Route path="reviews" element={<Reviews />} />
                     </Route>

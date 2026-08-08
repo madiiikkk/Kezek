@@ -1,5 +1,9 @@
-import React from 'react';
+import StaffControl from '../../components/organisms/Crm/Staff.tsx/StaffControl';
 
 export default function Staff() {
-    return <div>Staff</div>;
+    return (
+        <div>
+            <StaffControl />
+        </div>
+    );
 }

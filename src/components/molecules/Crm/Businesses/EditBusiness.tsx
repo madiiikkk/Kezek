@@ -168,7 +168,7 @@ export default function EditBusiness({ business }: EditBusinessProps) {
                 mail,
                 Number(city.id),
                 address,
-                isActiveStatus ? 'active' : 'draft', // Отправляем правильную строку на сервер
+                isActiveStatus ? 'active' : 'draft',
                 logo
             ),
         onSuccess: (data) => {

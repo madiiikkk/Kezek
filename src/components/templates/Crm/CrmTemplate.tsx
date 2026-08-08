@@ -13,6 +13,7 @@ import {
 import BusinessHeader from '../../organisms/Crm/Businesses/BusinessHeader';
 import ServicesHeader from '../../organisms/Crm/Services/ServicesHeader';
 import { BusinessProvider } from '../../../context/BusinessContext';
+import StaffHeader from '../../organisms/Crm/Staff.tsx/StaffHeader';
 
 const navigationData = [
     { id: 1, navigator: 'dashboard', label: 'Дашборд', icon: LayoutDashboard },
@@ -24,7 +25,13 @@ const navigationData = [
         rightElement: <BusinessHeader />
     },
 
-    { id: 3, navigator: 'staff', label: 'Персонал', icon: Users },
+    {
+        id: 3,
+        navigator: 'staff',
+        label: 'Персонал',
+        icon: Users,
+        rightElement: <StaffHeader />
+    },
     {
         id: 4,
         navigator: 'services',
@@ -54,19 +61,20 @@ export default function Crm() {
 
     return (
         <BusinessProvider>
-            <main className="h-screen bg-[#f8f9ff] flex overflow-hidden">
-                <aside className="flex-none border-r border-[#c7c4d8] h-full">
+            <main className="h-screen w-full bg-[#f8f9ff] flex overflow-hidden">
+                <aside className="flex-none border-r border-[#c7c4d8] h-full overflow-y-auto">
                     <Sidebar navigationItems={navigationData} />
                 </aside>
 
-                <div className="flex-1 flex flex-col min-w-0 h-full overflow-y-auto">
+                <div className="flex-1 flex flex-col min-w-0 h-full overflow-hidden">
                     <header className="shrink-0">
                         <Header
                             label={headerLabel}
                             rightElement={headerRightElement}
                         />
                     </header>
-                    <section className="py-9 px-10 flex-1">
+
+                    <section className="flex-1 overflow-y-auto py-9 px-10">
                         <Outlet />
                     </section>
                 </div>

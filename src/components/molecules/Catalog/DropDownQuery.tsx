@@ -8,18 +8,36 @@ import type { ReactNode } from 'react';
 type DropDownQueryProps = {
     title: string;
     children: ReactNode;
+    className?: string;
+    titleClassName?: string;
+    contentClassName?: string;
+    gapclassName?: string;
 };
 
-export default function DropDownQuery({ title, children }: DropDownQueryProps) {
+export default function DropDownQuery({
+    title,
+    children,
+    className = '',
+    titleClassName = '',
+    contentClassName = '',
+    gapclassName = ''
+}: DropDownQueryProps) {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleOpen = () => setIsOpen(!isOpen);
 
     return (
-        <div>
+        <div className={className}>
             <div className="w-40 md:w-full rounded-3xl py-2 flex flex-col gap-5 bg-white">
-                <div className="flex justify-between items-center">
-                    <Typography text={title} className="text-lg" />
+                <div
+                    className={
+                        gapclassName || 'flex justify-between items-center '
+                    }
+                >
+                    <Typography
+                        text={title}
+                        className={titleClassName || 'text-lg'}
+                    />
                     <Button onClick={toggleOpen}>
                         <Icon
                             icon={ChevronDown}
@@ -29,7 +47,7 @@ export default function DropDownQuery({ title, children }: DropDownQueryProps) {
                         />
                     </Button>
                 </div>
-                {!isOpen && <div>{children}</div>}
+                {!isOpen && <div className={contentClassName}>{children}</div>}
             </div>
         </div>
     );

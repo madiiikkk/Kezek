@@ -85,7 +85,7 @@ export default function Mybusinesses() {
             {hasNoBusinesses ? (
                 <div className="py-4">
                     <p className="text-gray-500">
-                        У вас пока нет ни одного бизнеса.
+                        У вас пока нет ни одного бизнеса
                     </p>
                 </div>
             ) : (

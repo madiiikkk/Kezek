@@ -39,7 +39,7 @@ export default function ServiceSelector() {
                 options={businessOptions || []}
                 value={selectedBusiness}
                 onChange={setSelectedBusiness}
-                className="w-full"
+                className="w-[200px]"
             />
         </div>
     );
