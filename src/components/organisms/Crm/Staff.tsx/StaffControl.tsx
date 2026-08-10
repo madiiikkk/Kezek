@@ -48,6 +48,8 @@ export default function StaffControl() {
 
     const staffList = Array.isArray(data) ? data : data?.data || [];
 
+    console.log(staffList);
+
     return (
         <div className="flex flex-col gap-6 px-5 p-5 border bg-white border-[#c7c4d8] rounded-2xl">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">

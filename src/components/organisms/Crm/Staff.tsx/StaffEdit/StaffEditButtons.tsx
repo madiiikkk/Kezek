@@ -1,5 +1,5 @@
 import { CalendarClock, FileText, UserX, Trash2 } from 'lucide-react';
-import { useParams, useNavigate } from 'react-router-dom'; // <-- Импортируем хуки роутера
+import { useParams, useNavigate } from 'react-router-dom';
 import Button from '../../../../atoms/Button';
 import Icon from '../../../../atoms/Icon';
 import Typography from '../../../../atoms/Typography';

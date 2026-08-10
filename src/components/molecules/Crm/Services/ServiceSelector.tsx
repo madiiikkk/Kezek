@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 
 import { listBusinesses } from '../../../../api/businesses';
-import Select, { type SelectOption } from '../../../atoms/Select';
+import Select from '../../../atoms/Select';
 import { useBusiness } from '../../../../context/BusinessContext';
 
 export default function ServiceSelector() {

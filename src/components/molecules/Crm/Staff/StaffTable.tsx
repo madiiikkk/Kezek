@@ -13,7 +13,7 @@ export type Staff = {
     position: string;
     is_active: boolean;
     photo?: string;
-    provide?: number;
+    active_services_count?: number;
 };
 
 export default function StaffTable({ staffs }: { staffs: Staff[] }) {
@@ -118,17 +118,11 @@ export default function StaffTable({ staffs }: { staffs: Staff[] }) {
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap">
                                         <span className="inline-flex items-center justify-center px-3 py-1 bg-[#eeebff] text-[#4F46E5] font-semibold text-sm rounded-full">
-                                            {staff.provide || '0'}
+                                            {staff.active_services_count || '0'}
                                         </span>
                                     </td>
                                     <td className="px-6 py-4 text-sm text-gray-700 whitespace-nowrap">
                                         <div className="flex justify-end items-center gap-5 text-gray-700">
-                                            <Button className="cursor-pointer text-slate-500 hover:text-indigo-600 transition-colors">
-                                                <Icon
-                                                    icon={CalendarDays}
-                                                    size={20}
-                                                />
-                                            </Button>
                                             <Button
                                                 className="cursor-pointer text-slate-500 hover:text-indigo-600 transition-colors"
                                                 onClick={() =>

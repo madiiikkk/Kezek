@@ -8,7 +8,8 @@ import {
     Layers,
     Users,
     Settings,
-    MessageSquareText
+    MessageSquareText,
+    CalendarClock
 } from 'lucide-react';
 import BusinessHeader from '../../organisms/Crm/Businesses/BusinessHeader';
 import ServicesHeader from '../../organisms/Crm/Services/ServicesHeader';
@@ -17,8 +18,15 @@ import StaffHeader from '../../organisms/Crm/Staff.tsx/StaffHeader';
 
 const navigationData = [
     { id: 1, navigator: 'dashboard', label: 'Дашборд', icon: LayoutDashboard },
+
     {
         id: 2,
+        navigator: 'appointments',
+        label: 'Назначения',
+        icon: CalendarDays
+    },
+    {
+        id: 3,
         navigator: 'my-businesses',
         label: 'Мои бизнесы',
         icon: Building2,
@@ -26,27 +34,27 @@ const navigationData = [
     },
 
     {
-        id: 3,
+        id: 4,
         navigator: 'staff',
         label: 'Персонал',
         icon: Users,
         rightElement: <StaffHeader />
     },
     {
-        id: 4,
+        id: 5,
         navigator: 'services',
         label: 'Услуги',
         icon: Layers,
         rightElement: <ServicesHeader />
     },
     {
-        id: 5,
-        navigator: 'appointments',
-        label: 'Назначения',
-        icon: CalendarDays
+        id: 6,
+        navigator: 'schedule',
+        label: 'График работы',
+        icon: CalendarClock
     },
-    { id: 6, navigator: 'settings', label: 'Настройки', icon: Settings },
-    { id: 7, navigator: 'reviews', label: 'Отзывы', icon: MessageSquareText }
+    { id: 7, navigator: 'settings', label: 'Настройки', icon: Settings },
+    { id: 8, navigator: 'reviews', label: 'Отзывы', icon: MessageSquareText }
 ];
 
 export default function Crm() {

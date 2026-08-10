@@ -23,6 +23,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { UserProvider } from '../context/UserContext';
 import CrmPage from '../pages/CRM/Crm';
 import EditStaff from '../pages/CRM/EditStaff';
+import Schedule from '../pages/CRM/Schedule';
 
 const queryClient = new QueryClient();
 
@@ -45,12 +46,13 @@ function App() {
                             element={<Mybusinesses />}
                         />
                         <Route path="appointments" element={<Appointments />} />
-                        <Route path="services" element={<Services />} />
                         <Route path="staff">
                             <Route index element={<Staff />} />
                             <Route path="add" element={<AddStaf />} />
                             <Route path="edit/:id" element={<EditStaff />} />
                         </Route>
+                        <Route path="services" element={<Services />} />
+                        <Route path="schedule" element={<Schedule />} />
                         <Route path="settings" element={<Settings />} />
                         <Route path="reviews" element={<Reviews />} />
                     </Route>
