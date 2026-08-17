@@ -34,7 +34,7 @@ export default function ServiceSelector() {
     }
 
     return (
-        <div className="flex bg-[#eff4ff] border border-[#c7c4d8] rounded-xl w-full">
+        <div className="flex bg-[#eff4ff] border border-[#c7c4d8] rounded-2xl w-full">
             <Select
                 options={businessOptions || []}
                 value={selectedBusiness}

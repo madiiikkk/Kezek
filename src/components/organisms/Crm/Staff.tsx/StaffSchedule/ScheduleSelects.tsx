@@ -5,7 +5,13 @@ import { useQuery } from '@tanstack/react-query';
 import { listBusinesses } from '../../../../../api/businesses';
 import { getMasters } from '../../../../../api/staff';
 
-export default function ScheduleSelects() {
+interface ScheduleSelectsProps {
+    onStaffSelect: (id: number | null) => void;
+}
+
+export default function ScheduleSelects({
+    onStaffSelect
+}: ScheduleSelectsProps) {
     const [selectedBusiness, setSelectedBusiness] =
         useState<SelectOption | null>(null);
     const [selectedSpecialist, setSelectedSpecialist] =
@@ -44,9 +50,15 @@ export default function ScheduleSelects() {
         label: `${m.first_name} (${m.position})`
     }));
 
+    const activeSpecialist = selectedSpecialist || specialistOptions[0];
+
     useEffect(() => {
-        setSelectedSpecialist(null);
-    }, [activeBusiness?.id]);
+        if (activeSpecialist?.id) {
+            onStaffSelect(Number(activeSpecialist.id));
+        } else {
+            onStaffSelect(null);
+        }
+    }, [activeSpecialist?.id, onStaffSelect]);
 
     if (isBusinessesPending) {
         return <div>Загрузка бизнесов...</div>;
@@ -55,7 +67,7 @@ export default function ScheduleSelects() {
     return (
         <div className="flex gap-3 items-end bg-white p-3 border border-[#c7c4d8] rounded-3xl w-fit">
             <div className="flex-1">
-                <Typography text={'Бизнес'} className="text-sm px-3 mb-1" />
+                <Typography text={'Бизнес'} className="text-sm px-3 mb-1 " />
                 <Select
                     options={businessOptions}
                     value={activeBusiness ?? { id: 0, label: 'Нет данных' }}
@@ -67,7 +79,10 @@ export default function ScheduleSelects() {
             <div className="w-px h-8 bg-gray-200 mb-3"></div>
 
             <div className="flex-1 relative">
-                <Typography text={'Специалист'} className="text-sm px-3 mb-1" />
+                <Typography
+                    text={'Специалист'}
+                    className="text-sm px-3 mb-1 "
+                />
                 <Select
                     options={specialistOptions}
                     value={

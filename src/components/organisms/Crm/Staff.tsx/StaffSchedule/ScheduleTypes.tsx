@@ -2,12 +2,12 @@ import { useState } from 'react';
 
 export default function ScheduleTypes() {
     const [activeFilter, setActiveFilter] = useState<
-        'Рабочие часы' | 'Перерывы' | 'Выходные'
-    >('Рабочие часы');
+        'Все' | 'Рабочие часы' | 'Выходные'
+    >('Все');
 
     return (
         <div className="flex gap-3 p-2 rounded-3xl w-fit border  border-[#c7c4d8] bg-white ">
-            {['Рабочие часы', 'Перерывы', 'Выходные'].map((filter) => (
+            {['Все', 'Рабочие часы', 'Выходные'].map((filter) => (
                 <button
                     key={filter}
                     type="button"
